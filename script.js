@@ -518,6 +518,9 @@ function displayOrderConfirmation() {
     }
     if (total) total.textContent = formatMoney(confirmedOrderTotal);
 }
+if (instructionNote) {
+    instructionNote.textContent = "Estimated preparation time: 10 minutes";
+}
 
 function startNewOrder() {
     cart = [];
