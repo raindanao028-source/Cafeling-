@@ -22,6 +22,7 @@ const products = {
     "Blueberry Muffin": 65
 };
 
+// Lahat ng Hot Coffee at Ice Drinks na pwedeng lagyan ng sugar level
 const customizableProducts = [
     "Americano",
     "Spanish Latte",
@@ -228,6 +229,7 @@ function removeFromCart(index) {
     updateCart();
 }
 
+/* UPDATE CART & FIX STATUS COLORS */
 function updateCart() {
     const quantity = getCartQuantity();
     const total = getCartTotal();
@@ -503,7 +505,6 @@ function displayOrderConfirmation() {
     const customer = document.getElementById("confirmedCustomerName");
     const items = document.getElementById("confirmedOrderItems");
     const total = document.getElementById("confirmedOrderTotal");
-    const instructionNote = document.getElementById("paymentInstructionNote");
 
     if (orderNumber) orderNumber.textContent = "Order #" + confirmedOrderNumber;
     if (customer) customer.textContent = confirmedCustomerName;
@@ -516,10 +517,6 @@ function displayOrderConfirmation() {
         });
     }
     if (total) total.textContent = formatMoney(confirmedOrderTotal);
-
-    if (instructionNote) {
-        instructionNote.textContent = "Estimated preparation time: 10 minutes";
-    }
 }
 
 function startNewOrder() {
